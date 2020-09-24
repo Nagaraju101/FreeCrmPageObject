@@ -31,9 +31,6 @@ public class LoginPage extends TestBase
     @FindBy(xpath="//*[@class='logo_text' and text()='CRMPRO']")
     WebElement crmLogo;
     
-    @FindBy(name="mainpanel")
-    WebElement frame; 
-    
     public LoginPage() throws IOException
     {
         PageFactory.initElements(driver, this);        
@@ -42,11 +39,6 @@ public class LoginPage extends TestBase
     public String validateLoginPageTitle()
     {
         return driver.getTitle(); 
-    }
-    
-    public boolean validateCRMIage()
-    {
-        return crmLogo.isDisplayed();
     }
     
     public HomePage login(String user, String pwd) throws InterruptedException
