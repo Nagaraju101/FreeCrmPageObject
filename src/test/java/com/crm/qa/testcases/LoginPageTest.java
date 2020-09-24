@@ -29,14 +29,14 @@ public class LoginPageTest extends TestBase
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     public void validateLoginPageTitleTest()
     {
         String title = loginPage.validateLoginPageTitle(); 
         Assert.assertEquals(title, "CRMPRO - CRM software for customer relationship management, sales, and support.");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void loginTest() throws InterruptedException
     {
         homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
