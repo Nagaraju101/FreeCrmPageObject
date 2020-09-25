@@ -10,14 +10,11 @@ public class TestUtil extends TestBase
     public TestUtil() throws IOException, FileNotFoundException
     {
         super();
-        
     }
-
-
     public static long PAGE_LOAD_TIMEOUT = 30;
     public static long IMPLICIT_TIMEOUT = 15;
     
-    
+
     public void switichToFrameByName(String frame)
     {
         driver.switchTo().frame(frame);
@@ -27,11 +24,6 @@ public class TestUtil extends TestBase
     {
         driver.switchTo().frame(id);
     }
-    
-    
-    
-    
-    
-    
+
     
 }

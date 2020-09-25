@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -30,6 +31,7 @@ public class LoginPageTest extends TestBase
     }
 
     @Test(priority = 1)
+
     public void validateLoginPageTitleTest()
     {
         String title = loginPage.validateLoginPageTitle(); 

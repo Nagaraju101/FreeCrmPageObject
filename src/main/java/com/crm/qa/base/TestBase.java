@@ -27,8 +27,7 @@ public class TestBase
         prop = new Properties();
         try
         {
-            FileInputStream fis = new FileInputStream(
-                    "C:\\workspace\\FreeCRMPageObject\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") +( "/src/main/resources/properties/config.properties"));
             prop.load(fis);
             
         }
