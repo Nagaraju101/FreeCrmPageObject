@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -29,7 +30,7 @@ public class LoginPageTest extends TestBase
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void validateLoginPageTitleTest()
     {
         String title = loginPage.validateLoginPageTitle(); 
@@ -37,7 +38,7 @@ public class LoginPageTest extends TestBase
     }
 
     @Test(priority = 1)
-    public void loginTest() throws InterruptedException
+    public void loginTest() throws FileNotFoundException, IOException
     {
         homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }

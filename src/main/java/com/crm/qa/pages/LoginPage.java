@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebElement;
@@ -49,12 +50,11 @@ public class LoginPage extends TestBase
         return crmLogo.isDisplayed();
     }
     
-    public HomePage login(String user, String pwd) throws InterruptedException
+    public HomePage login(String user, String pwd) throws FileNotFoundException, IOException
     {
         username.sendKeys(user);
         password.sendKeys(pwd);
-        loginBtn.click();
-        Thread.sleep(3000); 
+        loginBtn.click(); 
         
         return new HomePage(); 
     }
