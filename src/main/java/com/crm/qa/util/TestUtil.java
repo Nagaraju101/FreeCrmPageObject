@@ -15,15 +15,14 @@ public class TestUtil extends TestBase
     public static long IMPLICIT_TIMEOUT = 15;
     
 
-    public void switichToFrameByName(String frame)
+    public void switichToFrame(String frame)
     {
         driver.switchTo().frame(frame);
     }
     
-    public void switichToFrameByName(int id)
+    public void switichToFrame(int id)
     {
         driver.switchTo().frame(id);
     }
-
     
 }

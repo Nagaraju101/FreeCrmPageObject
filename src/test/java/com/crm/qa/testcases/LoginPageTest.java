@@ -31,7 +31,6 @@ public class LoginPageTest extends TestBase
     }
 
     @Test(priority = 1)
-
     public void validateLoginPageTitleTest()
     {
         String title = loginPage.validateLoginPageTitle(); 

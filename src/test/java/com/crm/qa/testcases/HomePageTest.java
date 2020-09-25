@@ -26,7 +26,7 @@ public class HomePageTest extends TestBase
     }
 
     @BeforeMethod
-    public void setUp() throws IOException
+    public void setUp() throws IOException, InterruptedException
     {
         initialization();
         loginPage = new LoginPage();
@@ -44,7 +44,7 @@ public class HomePageTest extends TestBase
     
     @Test(priority =1)
     public void verifyUserNameTest() {
-        testUtil.switchFrame(1);
+        testUtil.switichToFrame(1);
         Assert.assertTrue(homePage.verifyCorrectUsername());
     }
     
