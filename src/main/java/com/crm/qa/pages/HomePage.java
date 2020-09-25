@@ -56,4 +56,11 @@ public class HomePage extends TestBase
         dealsLink.click();
         return new TaskPage();
     }
+    
+    public boolean verifyCorrectUsername()
+    {
+       
+        return userLabel.isDisplayed();
+        
+    }
 }
