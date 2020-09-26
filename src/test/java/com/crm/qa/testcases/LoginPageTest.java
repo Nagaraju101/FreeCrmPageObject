@@ -15,7 +15,7 @@ import com.crm.qa.pages.LoginPage;
 public class LoginPageTest extends TestBase
 {
     LoginPage loginPage;
-    HomePage homepage;
+    HomePage homePage;
 
     public LoginPageTest() throws IOException
     {
@@ -23,26 +23,34 @@ public class LoginPageTest extends TestBase
     }
 
     @BeforeMethod
-    public void setUp() throws IOException
+    public void setUp() throws IOException, InterruptedException
     {
         initialization();
         loginPage = new LoginPage();
-
+        homePage = new HomePage(); 
     }
 
-    @Test(priority = 1)
+    @Test(priority = 3)
     public void validateLoginPageTitleTest()
     {
         String title = loginPage.validateLoginPageTitle(); 
         Assert.assertEquals(title, "CRMPRO - CRM software for customer relationship management, sales, and support.");
     }
 
-    @Test(priority = 2)
-    public void loginTest() throws InterruptedException, FileNotFoundException, IOException
+    @Test(priority =2)
+    public void loginTest() throws FileNotFoundException, InterruptedException, IOException
     {
-        homepage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+        homePage =  loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
-
+    
+    
+    @Test(priority = 1)
+    public void verifyLogoTest() throws InterruptedException, FileNotFoundException, IOException
+    {           
+      boolean flag = loginPage.verifyLogoText();
+      Assert.assertTrue(flag);
+    }
+    
     @AfterMethod
     public void tearDown()
     {

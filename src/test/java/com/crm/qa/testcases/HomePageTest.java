@@ -3,13 +3,13 @@ package com.crm.qa.testcases;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtil;
@@ -19,10 +19,11 @@ public class HomePageTest extends TestBase
     LoginPage loginPage; 
     HomePage homePage; 
     TestUtil testUtil; 
+    ContactsPage contactsPage; 
 
     public HomePageTest() throws IOException, FileNotFoundException
     {
-       PageFactory.initElements(driver, this);
+       super(); 
     }
 
     @BeforeMethod
@@ -35,12 +36,12 @@ public class HomePageTest extends TestBase
 
     }
     
-//    @Test (priority =2)
-//    public void verifyHomePageTitleTest()
-//    {
-//       String homePageTitle =  homePage.verifyHomePageTitle();
-//       Assert.assertEquals(homePageTitle, "CRMPRO", "Actutal Title is not matching with expected Title");
-//    }
+    @Test (priority =2)
+    public void verifyHomePageTitleTest()
+    {
+       String homePageTitle =  homePage.verifyHomePageTitle();
+       Assert.assertEquals(homePageTitle, "CRMPRO", "Actutal Title is not matching with expected Title");
+    }
     
     @Test(priority =1)
     public void verifyUserNameTest() {
@@ -48,8 +49,13 @@ public class HomePageTest extends TestBase
         Assert.assertTrue(homePage.verifyCorrectUsername());
     }
     
-    
-    
+    @Test(priority =3)
+    public void verifyclickOnContactsLickTest() throws FileNotFoundException, IOException, InterruptedException
+    {
+        testUtil.switichToFrame(1);
+        contactsPage = homePage.clickOnContactsLick();        
+        Thread.sleep(3000000);
+    }
     
     @AfterMethod
     public void tearDown()

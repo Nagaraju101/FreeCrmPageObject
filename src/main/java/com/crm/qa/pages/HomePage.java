@@ -39,7 +39,7 @@ public class HomePage extends TestBase
         return driver.getTitle();
     }
 
-    public ContactsPage clickOnContactsLick()
+    public ContactsPage clickOnContactsLick() throws FileNotFoundException, IOException
     {
         contactsLink.click();
         return new ContactsPage(); 
@@ -59,8 +59,9 @@ public class HomePage extends TestBase
     
     public boolean verifyCorrectUsername()
     {
-       
-        return userLabel.isDisplayed();
+       return userLabel.isDisplayed();
         
     }
+    
+   
 }

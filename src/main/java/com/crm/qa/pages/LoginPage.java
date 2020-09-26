@@ -29,8 +29,9 @@ public class LoginPage extends TestBase
     @FindBy(xpath="//button[contains(text()='Sign Up')]")
     WebElement SignUpBtn;
     
-    @FindBy(xpath="//*[@class='logo_text' and text()='CRMPRO']")
+    @FindBy(xpath="//img[@src='https://classic.freecrm.com/img/logo.png']")
     WebElement crmLogo;
+    
     
     public LoginPage() throws IOException
     {
@@ -43,13 +44,20 @@ public class LoginPage extends TestBase
     }
     
 
-    public HomePage login(String user, String pwd) throws InterruptedException
+    public HomePage login(String user, String pwd) throws InterruptedException, FileNotFoundException, IOException
     {
+        username.clear();
         username.sendKeys(user);
+        password.clear();
         password.sendKeys(pwd);
         loginBtn.click(); 
         
         return new HomePage(); 
+    }
+    
+    public boolean  verifyLogoText() {
+       
+       return  crmLogo.isDisplayed();
     }
     
      
