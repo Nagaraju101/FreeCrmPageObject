@@ -53,8 +53,8 @@ public class HomePageTest extends TestBase
     public void verifyclickOnContactsLickTest() throws FileNotFoundException, IOException, InterruptedException
     {
         testUtil.switichToFrame(1);
-        contactsPage = homePage.clickOnContactsLick();        
-        Thread.sleep(3000000);
+        contactsPage = homePage.clickOnContactsLink();        
+        Thread.sleep(3000);
     }
     
     @AfterMethod

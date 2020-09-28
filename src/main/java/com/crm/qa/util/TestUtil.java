@@ -11,6 +11,8 @@ public class TestUtil extends TestBase
     {
         super();
     }
+    
+    
     public static long PAGE_LOAD_TIMEOUT = 30;
     public static long IMPLICIT_TIMEOUT = 15;
     
@@ -24,5 +26,10 @@ public class TestUtil extends TestBase
     {
         driver.switchTo().frame(id);
     }
+    
+//    public void selectContact(String name)
+//    {
+//       driver.findElement(By) "//a[text()='a b']//parent::td[@class='datalistrow']//preceding-sibling::td[@class='datalistrow']//input[@name='contact_id']"
+//    }
     
 }

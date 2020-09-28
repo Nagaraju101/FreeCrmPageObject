@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -39,7 +40,7 @@ public class HomePage extends TestBase
         return driver.getTitle();
     }
 
-    public ContactsPage clickOnContactsLick() throws FileNotFoundException, IOException
+    public ContactsPage clickOnContactsLink() throws FileNotFoundException, IOException
     {
         contactsLink.click();
         return new ContactsPage(); 
@@ -63,5 +64,11 @@ public class HomePage extends TestBase
         
     }
     
-   
+   public void clickOnNewContactLink() throws InterruptedException {
+       Actions action = new Actions(driver); 
+       action.moveToElement(contactsLink).build().perform();
+       Thread.sleep(5000);
+       newContactLink.click();
+       
+   }
 }
